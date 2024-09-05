@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMT Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">GMTCalc</a>
+            <ul class="navbar-menu">
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Sidebars -->
+        <aside class="sidebar left-sidebar">
+            <h2>Future Feature</h2>
+            <p>Placeholder for additional content or features that will be added in the future.</p>
+        </aside>
+
+        <main>
+            <h1>GoMining Calculator</h1>
+
+
+            <!-- Live Prices Display -->
+            <section class="live-prices">
+                <h2>Live Prices</h2>
+                <div class="result-item">
+                    <strong>Bitcoin Price:</strong> $<span id="btc-price">Loading...</span>
+                </div>
+                <div class="result-item">
+                    <strong>GoMining Token Price:</strong> $<span id="gmt-price">Loading...</span>
+                </div>
+            </section>
+
+            <section id="calculator" class="form-box">
+                <h2>Enter Your Data</h2>
+                <form id="calculator-form">
+                    <label for="th-power">TH Power (in TH/s):</label>
+                    <input type="number" id="th-power" name="th-power" required>
+
+                    <label for="efficiency">Efficiency (W/TH):</label>
+                    <input type="number" id="efficiency" name="efficiency" required>
+
+                    <label for="discount">Discount %:</label>
+                    <input type="number" id="discount" name="discount" value="0" step="any">
+
+                    <label for="manual-btc-price">Set BTC price</label>
+                    <input type="number" id="manual-btc-price" placeholder="Enter hypothetical BTC price">
+
+                    <button type="button" onclick="calculateEarnings()">Calculate</button>
+                </form>
+            </section>
+
+            
+
+            <section class="results-box">
+                <h2>Results</h2>
+                <div id="results">
+                    <p id="earnings">Earnings: $0.00</p>
+                    <p id="pure-earnings"></p>
+                    
+                    <p id="electricity-cost">Electricity Cost: 0.000 GoMining Tokens</p>
+                    <p id="service-cost">Service Cost: 0.000 GoMining Tokens</p>
+                </div>
+            </section>
+
+            <section class="timeframe-box">
+                <h2>Select Timeframe</h2>
+                <div class="timeframe-buttons">
+                    <button onclick="setView('daily')">Daily</button>
+                    <button onclick="setView('monthly')">Monthly</button>
+                    <button onclick="setView('yearly')">Yearly</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebars -->
+        <aside class="sidebar right-sidebar">
+            <h2>Upcoming Features</h2>
+            <p>Placeholder for content about upcoming features or updates.</p>
+        </aside>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle">Toggle Theme</button>
+
+    <script src="java/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+/* Define CSS variables for light and dark themes */
+:root {
+    /* Light Theme */
+    --background-color: #f0f2f5;
+    --text-color: #333;
+    --box-background-color: #ffffff;
+    --box-border-color: #e0e0e0;
+    --button-background-color: #007bff;
+    --button-hover-color: #0056b3;
+    --button-text-color: #ffffff;
+    --header-background-color: #007bff;
+    --header-text-color: #ffffff;
+    --navbar-background-gradient: linear-gradient(to right, #007bff, #0056b3);
+    --navbar-text-color: #ffffff;
+    --navbar-hover-background: #0056b3;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --button-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --heading-color: #333; /* Dark color for headings */
+}
+
+[data-theme="dark"] {
+    /* Dark Theme */
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --box-background-color: #1e1e1e;
+    --box-border-color: #333;
+    --button-background-color: #bb86fc;
+    --button-hover-color: #8c4dff;
+    --button-text-color: #ffffff;
+    --header-background-color: #bb86fc;
+    --header-text-color: #ffffff;
+    --navbar-background-gradient: linear-gradient(to right, #bb86fc, #8c4dff);
+    --navbar-text-color: #ffffff;
+    --navbar-hover-background: #8c4dff;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    --button-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --heading-color: #bb86fc; /* Light purple for headings */
+}
+
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    background: var(--navbar-background-gradient);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    color: var(--navbar-text-color);
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin: 0 15px;
+}
+
+.navbar-menu a {
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.navbar-menu a:hover {
+    background-color: var(--navbar-hover-background);
+    color: var(--navbar-text-color);
+}
+
+/* Container and Box Styles */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+aside.sidebar {
+    width: 20%;
+    padding: 20px;
+    background-color: var(--box-background-color);
+    border-radius: 8px;
+    border: 1px solid var(--box-border-color);
+    box-shadow: var(--box-shadow);
+}
+
+aside.sidebar h2 {
+    margin-top: 0;
+    color: var(--heading-color);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--header-text-color);
+    background-color: var(--header-background-color);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Box styles */
+.info-box, .form-box, .timeframe-box, .results-box, .live-prices {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid var(--box-border-color);
+    border-radius: 8px;
+    background-color: var(--box-background-color);
+    box-shadow: var(--box-shadow);
+}
+
+.info-box h2, .form-box h2, .timeframe-box h2, .results-box h2, .live-prices h2  {
+    margin-top: 0;
+    color: var(--heading-color); /* Heading color for both themes */
+}
+
+/* Form styles */
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow);
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: var(--button-shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+form button:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Timeframe buttons */
+.timeframe-buttons {
+    text-align: center;
+}
+
+.timeframe-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+    box-shadow: var(--button-shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.timeframe-buttons button:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Theme toggle button */
+#theme-toggle {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: var(--button-shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Add these styles to your css/styles.css */
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: #666666;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Help icon styles */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+input[type="number"] {
+    padding-right: 30px; /* Make room for the help icon */
+}
+
+.help-icon {
+    position: absolute;
+    right: 10px; /* Adjust as needed */
+    cursor: pointer;
+    background-color: #ddd;
+    color: #333;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
